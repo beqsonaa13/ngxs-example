@@ -1,0 +1,17 @@
+<div *ngFor="let car of (cars$ | async)?.cars">
+  <div style="margin-bottom: 16px">
+    <span style="margin-right: 16px; display: inline-block">{{car.name}}</span>
+    <span style="margin-right: 16px; display: inline-block">{{car.engine}}</span>
+    <span style="margin-right: 16px; display: inline-block">{{car.year}}</span>
+  </div>
+  <button (click)="removeCar(car)">Remove car</button>
+</div>
+
+
+<div [formGroup]="form">
+  <input formControlName="name" placeholder="name">
+  <input formControlName="engine" placeholder="engine">
+  <input formControlName="year" placeholder="year" type="number">
+</div>
+
+<button (click)="addCar()">Add car</button>
